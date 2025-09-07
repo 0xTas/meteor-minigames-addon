@@ -33,6 +33,7 @@ tasks {
     processResources {
         val propertyMap = mapOf(
             "version" to project.version,
+            "commit" to (project.findProperty("commit") ?: ""),
             "mc_version" to project.property("minecraft_version"),
         )
 
