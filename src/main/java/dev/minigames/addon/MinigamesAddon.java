@@ -1,6 +1,7 @@
 package dev.minigames.addon;
 
 import com.mojang.logging.LogUtils;
+import dev.minigames.addon.modules.Meteorites;
 import dev.minigames.addon.modules.Minesweeper;
 import dev.minigames.addon.util.AddonUtil;
 import meteordevelopment.meteorclient.MeteorClient;
@@ -20,7 +21,10 @@ public class MinigamesAddon extends MeteorAddon {
     public void onInitialize() {
         LOG.info("Initializing Meteor Minigames Addon..!");
 
+        Modules.get().add(new Meteorites());
         Modules.get().add(new Minesweeper());
+
+        LOG.info("Meteor Minigames Addon initialized successfully!");
     }
 
     @Override
