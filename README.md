@@ -17,6 +17,7 @@
 ## Minigames
 - **Minesweeper**
     - Classic Minesweeper with custom difficulty settings and configurable color schemes.
+    - Supports automatic saving and loading of games.
 - **Meteorites**
     - A custom-built Asteroids-like arcade shooter with powerups and boss waves.
     - Every 3 waves, gain a new random powerup if you don't already have one.
