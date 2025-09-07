@@ -8,6 +8,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import java.nio.file.StandardOpenOption;
 import dev.minigames.addon.MinigamesAddon;
+import dev.minigames.addon.util.MinigamesUtil;
 import org.jetbrains.annotations.Nullable;
 import net.fabricmc.loader.api.FabricLoader;
 import meteordevelopment.meteorclient.settings.*;
@@ -37,7 +38,7 @@ public class Meteorites extends Module {
         if (bulletColor.get().rainbow) RainbowColors.add(bulletColor.get());
     }
 
-    private static final String GAME_FOLDER = "meteor-client/minigames/meteorites";
+    private static final String GAME_FOLDER = "meteorites";
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
 
     public static final String[] GAMEPLAY_TIPS = new String[] {
@@ -183,7 +184,7 @@ public class Meteorites extends Module {
 
     public void saveGame(SaveData data) {
         saveData = data;
-        Path saveFolder = FabricLoader.getInstance().getGameDir().resolve(GAME_FOLDER);
+        Path saveFolder = MinigamesUtil.GAME_FOLDER.toPath().resolve(GAME_FOLDER);
 
         //noinspection ResultOfMethodCallIgnored
         saveFolder.toFile().mkdirs();
@@ -204,7 +205,7 @@ public class Meteorites extends Module {
 
     public void loadGame() {
         loaded = true;
-        Path saveFolder = FabricLoader.getInstance().getGameDir().resolve(GAME_FOLDER);
+        Path saveFolder = MinigamesUtil.GAME_FOLDER.toPath().resolve(GAME_FOLDER);
 
         //noinspection ResultOfMethodCallIgnored
         saveFolder.toFile().mkdirs();
@@ -237,7 +238,7 @@ public class Meteorites extends Module {
 
     public void saveHighScore(HighScore score) {
         highScore = score;
-        Path scoreFolder = FabricLoader.getInstance().getGameDir().resolve(GAME_FOLDER);
+        Path scoreFolder = MinigamesUtil.GAME_FOLDER.toPath().resolve(GAME_FOLDER);
 
         //noinspection ResultOfMethodCallIgnored
         scoreFolder.toFile().mkdirs();
@@ -257,7 +258,7 @@ public class Meteorites extends Module {
     }
 
     public void loadHighScore() {
-        Path scoreFolder = FabricLoader.getInstance().getGameDir().resolve(GAME_FOLDER);
+        Path scoreFolder = MinigamesUtil.GAME_FOLDER.toPath().resolve(GAME_FOLDER);
 
         //noinspection ResultOfMethodCallIgnored
         scoreFolder.toFile().mkdirs();
