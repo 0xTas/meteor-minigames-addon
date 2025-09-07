@@ -8,8 +8,8 @@
 **If you are already using Stardust, then there is no need to download this addon.**
 
 ## Installation
-- First, ensure that Fabric for Minecraft 1.21.4 is installed, along with Meteor Client 1.21.4.
-- You can either download the [latest release](https://github.com/0xTas/meteor-minigames-addon/releases/latest), or clone and build the addon using `./gradlew build`.
+- First, ensure that Fabric for Minecraft 1.21.8 is installed, along with Meteor Client 1.21.8.
+- You can either download the [latest release](https://github.com/0xTas/meteor-minigames-addon/releases/tag/latest-1.21.8), or clone and build the addon using `./gradlew build`.
 - Drop the addon jar inside your mods folder alongside Meteor client. That's all!
 
 ---
@@ -27,6 +27,7 @@
     - Find out which powerups and strategies can take you the farthest!
     - You can see a demo of the game in action [here](https://www.youtube.com/watch?v=xu2lorSXFKg).
     - Tip: if you find the HUD text difficult to read, picking a different font may help. I like Cascadia Code.
+    - **NOTE: RENDERING FOR METEORITES IS CURRENTLY BROKEN ON 1.21.8.**
 - More to come..?
 
 ---
