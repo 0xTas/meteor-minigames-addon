@@ -1,11 +1,9 @@
 <div align="center">
-  <!-- Logo and Title -->
   <img src="/src/main/resources/assets/minigames/icon-large.png" alt="logo" width="30%"/>
 <h1>Meteor Minigames Addon</h1>
 <p>Why play Minecraft when you can play other shit inside of Minecraft?</p>
 </div>
 
----
 **This is a standalone addon containing the minigames that come with my Meteor Client addon [Stardust](https://github.com/0xTas/stardust).**<br>
 **If you are already using Stardust, then there is no need to download this addon.**
 
