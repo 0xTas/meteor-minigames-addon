@@ -273,7 +273,7 @@ public class Minesweeper extends Module {
 
     @Override
     public void onActivate() {
-        Path saveFolder = FabricLoader.getInstance().getGameDir().resolve(GAME_FOLDER);
+        Path saveFolder = MinigamesUtil.GAME_FOLDER.toPath().resolve(GAME_FOLDER);
 
         //noinspection ResultOfMethodCallIgnored
         saveFolder.toFile().mkdirs();
