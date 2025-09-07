@@ -1,10 +1,10 @@
 package dev.minigames.addon.gui.screens;
 
 import org.jetbrains.annotations.Nullable;
-import dev.minigames.addon.gui.widgets.WMinesweeper;
-import meteordevelopment.meteorclient.gui.GuiTheme;
-import meteordevelopment.meteorclient.gui.utils.Cell;
 import dev.minigames.addon.modules.Minesweeper;
+import meteordevelopment.meteorclient.gui.GuiTheme;
+import dev.minigames.addon.gui.widgets.WMinesweeper;
+import meteordevelopment.meteorclient.gui.utils.Cell;
 import meteordevelopment.meteorclient.gui.WindowScreen;
 import meteordevelopment.meteorclient.gui.widgets.WWidget;
 

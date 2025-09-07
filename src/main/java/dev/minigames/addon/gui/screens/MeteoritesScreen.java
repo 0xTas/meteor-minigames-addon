@@ -1,12 +1,12 @@
 package dev.minigames.addon.gui.screens;
 
 import org.jetbrains.annotations.Nullable;
-import meteordevelopment.meteorclient.gui.GuiTheme;
 import dev.minigames.addon.modules.Meteorites;
+import meteordevelopment.meteorclient.gui.GuiTheme;
 import meteordevelopment.meteorclient.gui.utils.Cell;
-import dev.minigames.addon.gui.widgets.meteorites.WMeteorites;
 import meteordevelopment.meteorclient.gui.WindowScreen;
 import meteordevelopment.meteorclient.gui.widgets.WWidget;
+import dev.minigames.addon.gui.widgets.meteorites.WMeteorites;
 
 /**
  * @author Tas [0xTas] <root@0xTas.dev>

@@ -1,17 +1,17 @@
 package dev.minigames.addon;
 
+import org.slf4j.Logger;
 import com.mojang.logging.LogUtils;
+import dev.minigames.addon.util.AddonUtil;
+import net.fabricmc.loader.api.FabricLoader;
 import dev.minigames.addon.modules.Meteorites;
 import dev.minigames.addon.modules.Minesweeper;
-import dev.minigames.addon.util.AddonUtil;
 import meteordevelopment.meteorclient.MeteorClient;
+import net.fabricmc.loader.api.metadata.CustomValue;
 import meteordevelopment.meteorclient.addons.GithubRepo;
 import meteordevelopment.meteorclient.addons.MeteorAddon;
-import meteordevelopment.meteorclient.systems.modules.Category;
 import meteordevelopment.meteorclient.systems.modules.Modules;
-import net.fabricmc.loader.api.FabricLoader;
-import net.fabricmc.loader.api.metadata.CustomValue;
-import org.slf4j.Logger;
+import meteordevelopment.meteorclient.systems.modules.Category;
 
 public class MinigamesAddon extends MeteorAddon {
     public static final Logger LOG = LogUtils.getLogger();

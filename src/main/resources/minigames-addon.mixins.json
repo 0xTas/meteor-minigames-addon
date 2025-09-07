@@ -5,5 +5,9 @@
   "client": [],
   "injectors": {
     "defaultRequire": 0
-  }
+  },
+  "mixins": [
+    "WHeaderMixin",
+    "WWindowMixin"
+  ]
 }

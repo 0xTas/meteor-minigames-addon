@@ -2,12 +2,11 @@ package dev.minigames.addon.gui.widgets.meteorites.input;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import net.minecraft.text.Text;
 import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.glfw.GLFW.GLFW_PRESS;
-import dev.minigames.addon.gui.widgets.meteorites.WMeteorites;
-import net.minecraft.text.Text;
-
 import static meteordevelopment.meteorclient.MeteorClient.mc;
+import dev.minigames.addon.gui.widgets.meteorites.WMeteorites;
 
 /**
  * @author Tas [0xTas] <root@0xTas.dev>

@@ -9,10 +9,10 @@ import org.jetbrains.annotations.NotNull;
 import meteordevelopment.meteorclient.gui.GuiTheme;
 import dev.minigames.addon.gui.widgets.meteorites.WMeteorites;
 import dev.minigames.addon.gui.widgets.meteorites.entity.Ship;
-import dev.minigames.addon.gui.widgets.meteorites.entity.Powerups;
 import meteordevelopment.meteorclient.gui.renderer.GuiRenderer;
 import meteordevelopment.meteorclient.utils.render.color.Color;
 import meteordevelopment.meteorclient.renderer.text.TextRenderer;
+import dev.minigames.addon.gui.widgets.meteorites.entity.Powerups;
 
 /**
  * @author Tas [0xTas] <root@0xTas.dev>
