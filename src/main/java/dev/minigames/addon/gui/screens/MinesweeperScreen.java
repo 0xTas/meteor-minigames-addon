@@ -1,0 +1,39 @@
+package dev.minigames.addon.gui.screens;
+
+import org.jetbrains.annotations.Nullable;
+import dev.minigames.addon.gui.widgets.WMinesweeper;
+import meteordevelopment.meteorclient.gui.GuiTheme;
+import meteordevelopment.meteorclient.gui.utils.Cell;
+import dev.minigames.addon.modules.Minesweeper;
+import meteordevelopment.meteorclient.gui.WindowScreen;
+import meteordevelopment.meteorclient.gui.widgets.WWidget;
+
+/**
+ * @author Tas [0xTas] <root@0xTas.dev>
+ **/
+public class MinesweeperScreen extends WindowScreen {
+    private final GuiTheme theme;
+    private final Minesweeper module;
+    private @Nullable Cell<? extends WWidget> widget = null;
+
+    public MinesweeperScreen(Minesweeper module, GuiTheme theme, String title) {
+        super(theme, title);
+        this.theme = theme;
+        this.module = module;
+    }
+
+    @Override
+    public void initWidgets() {
+        widget = add(new WMinesweeper(module, theme));
+    }
+
+    @Override
+    public void onClosed() {
+        if (module.isActive()) module.toggle();
+        if (widget != null && widget.widget() instanceof WMinesweeper minesweeper) {
+            if (module.shouldSave.get() && minesweeper.shouldSaveGame()) {
+                module.saveGame(minesweeper.saveGame());
+            }
+        }
+    }
+}

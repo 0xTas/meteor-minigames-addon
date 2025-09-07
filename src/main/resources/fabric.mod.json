@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "minigames-addon",
+  "version": "${version}",
+  "name": "Minigames Addon",
+  "description": "Why play Minecraft when you can play other shit inside of Minecraft?",
+  "authors": [
+    "0xTas"
+  ],
+  "contact": {
+    "sources": "https://github.com/0xTas/meteor-minigames-addon"
+  },
+  "icon": "assets/minigames/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "meteor": [
+      "dev.minigames.addon.MinigamesAddon"
+    ]
+  },
+  "mixins": [
+    "minigames-addon.mixins.json"
+  ],
+  "custom": {
+    "meteor-client:color": "225,25,25",
+    "meteor-client:commit": "${commit}"
+  },
+  "depends": {
+    "java": ">=21",
+    "minecraft": ["${mc_version}", "1.21.7", "1.21.6"],
+    "meteor-client": "*"
+  }
+}
