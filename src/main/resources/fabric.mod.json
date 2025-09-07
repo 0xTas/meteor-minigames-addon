@@ -21,7 +21,8 @@
     "minigames-addon.mixins.json"
   ],
   "custom": {
-    "meteor-client:color": "169,3,252"
+    "meteor-client:color": "169,3,252",
+    "meteor-client:commit": "${commit}"
   },
   "depends": {
     "java": ">=21",
