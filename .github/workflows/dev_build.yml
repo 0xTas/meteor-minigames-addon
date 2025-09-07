@@ -1,34 +1,53 @@
+# This workflow will build a Java project with Gradle and cache/restore any dependencies to improve the workflow execution time
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-gradle
+
 name: Publish Development Build
-on: push
+
+on:
+  push:
+    branches: [ "1.21.8" ]
+    paths-ignore:
+      - '*.md'
+
+concurrency:
+  group: "build"
+  cancel-in-progress: true
 
 jobs:
   build:
+
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-        with:
-          persist-credentials: false
-
-      - name: Set up Gradle
-        uses: gradle/actions/setup-gradle@v4
-
+      - name: Wrapper Validation
+        uses: gradle/actions/wrapper-validation@v3
       - name: Set up Java
         uses: actions/setup-java@v4
         with:
+          java-version: '21'
           distribution: 'temurin'
-          java-version: 21
+
+      - name: Dependency Caching # Taken from github.com/FlorianMichael/BaseProject
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
 
       - name: Build with Gradle
-        run: ./gradlew build
+        run: ./gradlew build -Pcommit=${{ github.sha }}
 
       - name: Release
-        uses: softprops/action-gh-release@v2
+        uses: "marvinpinto/action-automatic-releases@latest"
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          tag_name: snapshot
-          name: Dev Build
+          repo_token: '${{ secrets.GITHUB_TOKEN }}'
+          automatic_release_tag: latest-1.21.8
           prerelease: true
+          title: 1.21.8 Dev Build
           files: |
             ./build/libs/*.jar
