@@ -11,7 +11,7 @@ public enum Powerups implements StringIdentifiable {
     public String asString() {
         return switch (this) {
             case NONE -> "None";
-            case SNIPER -> "Sniper"; // fast-moving piercing rounds, long cooldown
+            case SNIPER -> "Sniper"; // fast-moving piercing rounds, precision aim, long cooldown
             case ENTROPY -> "Entropy"; // random powerup every round excluding stardust
             case SHOTGUN -> "Shotgun"; // many pellets with random spread; player recoil, long cooldown
             case STARDUST -> "Stardust"; // many powerups combined (exceedingly rare and capped at 3-rounds to balance)
