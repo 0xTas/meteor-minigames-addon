@@ -19,7 +19,7 @@ public enum Powerups implements StringIdentifiable {
             case BULLET_HELL -> "Bullet Hell"; // bullets naturally live longer
             case PHASE_SHIFT -> "Phase Shift"; // replaces right-click warp ability, briefly phase through meteorites
             case MIDAS_TOUCH -> "Midas Touch"; // lol: shooting a bullet now costs points, but is refunded with interest if it kills a meteorite
-            case GRAVITY_WELL -> "Gravity Well"; // only granted if mouse aim enabled, deploys at cursor to draw in nearby meteorites
+            case GRAVITY_WELL -> "Gravity Well"; // deploys at cursor to cc nearby meteorites, high skill ceiling
             case HOMING_SHOTS -> "Homing Rounds"; // bullets track towards nearby meteorites
             case DOUBLE_POINTS -> "Double Points"; // kills award double points
             case PRECISION_AIM -> "Precision Aim"; // only granted if mouse aim enabled, no rotation delay towards cursor

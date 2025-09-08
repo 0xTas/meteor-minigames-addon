@@ -569,7 +569,7 @@ public class Ship extends Entity {
             int idx = (start + n) % len;
             Powerups p = vals[idx];
             if (!widget.module.mouseAim.get() &&
-                (p == Powerups.GRAVITY_WELL || p == Powerups.PRECISION_AIM || p == Powerups.CALIBRATED_FSD)) continue;
+                (p == Powerups.PRECISION_AIM || p == Powerups.CALIBRATED_FSD)) continue;
 
             foundIdx = idx;
             break;
@@ -583,7 +583,7 @@ public class Ship extends Entity {
                 if (p == Powerups.ENTROPY) continue;
                 if (p == Powerups.STARDUST) continue;
                 if (!widget.module.mouseAim.get()
-                    && (p == Powerups.GRAVITY_WELL || p == Powerups.PRECISION_AIM || p == Powerups.CALIBRATED_FSD)) continue;
+                    && (p == Powerups.PRECISION_AIM || p == Powerups.CALIBRATED_FSD)) continue;
                 valid.add(p);
             }
 
@@ -647,7 +647,6 @@ public class Ship extends Entity {
             if (power.equals(Powerups.NONE)) continue;
             if (power.equals(Powerups.STARDUST)) continue;
             if (this.hasEntropy() && power.equals(Powerups.ENTROPY)) continue;
-            if (power.equals(Powerups.GRAVITY_WELL) && !widget.module.mouseAim.get()) continue;
             if (power.equals(Powerups.PRECISION_AIM) && !widget.module.mouseAim.get()) continue;
             if (power.equals(Powerups.CALIBRATED_FSD) && !widget.module.mouseAim.get()) continue;
 
