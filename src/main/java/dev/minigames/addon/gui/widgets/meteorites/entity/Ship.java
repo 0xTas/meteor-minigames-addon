@@ -272,7 +272,8 @@ public class Ship extends Entity {
                     this.jumpCooling = false;
                 }
             } else if (!this.getPowerup().equals(Powerups.SUPERCHARGED_FSD)) {
-                if (System.currentTimeMillis() - this.lastHyperJump >= (IFRAMES_ON_HYPERJUMP * 3) * 1000) {
+                if (this.score >= HYPERSPACE_SCORE_COST
+                    && System.currentTimeMillis() - this.lastHyperJump >= (IFRAMES_ON_HYPERJUMP * 3) * 1000) {
                     this.jumpCooling = false;
                 }
             }
