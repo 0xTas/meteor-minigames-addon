@@ -115,6 +115,7 @@ public class WMeteorites extends WWidget {
                 gameBegan = true;
                 pausedAt = System.currentTimeMillis();
                 player.lastHyperJump += millisSincePaused;
+                if (module.gameTips.get()) cycleNewGameTip();
                 if (player.getPowerup().equals(Powerups.STARDUST)) {
                     initStardustColor();
                 } else if (player.getPowerup().equals(Powerups.MIDAS_TOUCH)) {
