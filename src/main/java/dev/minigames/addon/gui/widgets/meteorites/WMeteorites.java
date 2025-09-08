@@ -593,9 +593,9 @@ public class WMeteorites extends WWidget {
         }
 
         if (player.hasEntropy()
-            || (wave % 3 == 0 && (player.getPowerup().equals(Powerups.NONE) || (player.getPowerup().equals(Powerups.STARDUST) && !CHEAT_MODE)))
-            || (CHEAT_MODE && (module.randomizePowerups.get() || player.getPowerup().equals(Powerups.NONE)))) {
-
+            || (CHEAT_MODE && module.randomizePowerups.get())
+            || (!CHEAT_MODE && wave % 3 == 0 && (player.getPowerup().equals(Powerups.NONE) || (player.getPowerup().equals(Powerups.STARDUST))))
+        ) {
             player.gainNewPowerup(player.hasEntropy() ? player.getPowerup() : null, this);
             playSound(SoundEvents.ENTITY_PLAYER_LEVELUP, rng.nextFloat(0.77f, 1.1337f));
         } else {
