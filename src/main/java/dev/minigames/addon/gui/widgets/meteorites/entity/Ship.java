@@ -663,6 +663,10 @@ public class Ship extends Entity {
             this.setEntropy(true);
             this.setPowerup(valid.get(newLuck));
         } else this.setPowerup(powerup);
+
+        if (this.getPowerup().equals(Powerups.MIDAS_TOUCH)) {
+            widget.initMidasColor();
+        }
     }
 
     private double shortestAngleDiff(double target, double src) {
