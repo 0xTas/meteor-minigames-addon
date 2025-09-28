@@ -9,13 +9,12 @@ import com.google.gson.GsonBuilder;
 import java.nio.file.StandardOpenOption;
 import dev.minigames.addon.MinigamesAddon;
 import org.jetbrains.annotations.Nullable;
-import net.fabricmc.loader.api.FabricLoader;
 import dev.minigames.addon.util.MinigamesUtil;
 import meteordevelopment.meteorclient.settings.*;
-import dev.minigames.addon.gui.widgets.WMinesweeper;
 import meteordevelopment.meteorclient.gui.GuiThemes;
 import dev.minigames.addon.gui.screens.MinesweeperScreen;
 import meteordevelopment.meteorclient.systems.modules.Module;
+import dev.minigames.addon.gui.widgets.minesweeper.WMinesweeper;
 import meteordevelopment.meteorclient.utils.render.color.SettingColor;
 import meteordevelopment.meteorclient.utils.render.color.RainbowColors;
 
