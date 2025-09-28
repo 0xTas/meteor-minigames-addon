@@ -148,12 +148,42 @@ public class WMinesweeper extends WWidget {
     }
 
     public void revealCell(int r, int c) {
-        if (!inBounds(r, c) || state[r][c] == 1 || state[r][c] == 2 || gameOver) return;
+        if (!inBounds(r, c) || state[r][c] == 2 || gameOver) return;
 
         if (firstClick) {
-            // Lazy-place mines to guarantee the first click is safe
             placeMines(r, c);
             firstClick = false;
+        }
+
+        if (state[r][c] == 1) {
+            // check for chording eligibility
+            int flags = 0;
+            int amt = grid[r][c];
+            for (int dr = -1; dr <= 1; dr++) {
+                for (int dc = -1; dc <= 1; dc++) {
+                    if (dr == 0 && dc == 0) continue;
+
+                    int nr = r + dr, nc = c + dc;
+                    if (inBounds(nr, nc) && state[nr][nc] == 2) {
+                        flags++;
+                    }
+                }
+            }
+
+            if (flags > 0 && flags == amt) {
+                for (int dr = -1; dr <= 1; dr++) {
+                    for (int dc = -1; dc <= 1; dc++) {
+                        if (dr == 0 && dc == 0) continue;
+
+                        int nr = r + dr, nc = c + dc;
+                        if (inBounds(nr, nc) && state[nr][nc] == 0) {
+                            revealCell(nr, nc);
+                        }
+                    }
+                }
+            }
+
+            return;
         }
 
         if (grid[r][c] == -1) {
