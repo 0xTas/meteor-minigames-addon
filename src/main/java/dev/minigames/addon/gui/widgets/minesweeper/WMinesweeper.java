@@ -1,4 +1,4 @@
-package dev.minigames.addon.gui.widgets;
+package dev.minigames.addon.gui.widgets.minesweeper;
 
 import java.util.Deque;
 import java.util.Random;
