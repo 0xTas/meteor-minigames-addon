@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import com.mojang.logging.LogUtils;
 import dev.minigames.addon.util.AddonUtil;
 import net.fabricmc.loader.api.FabricLoader;
+import dev.minigames.addon.modules.Solitaire;
 import dev.minigames.addon.modules.Meteorites;
 import dev.minigames.addon.modules.Minesweeper;
 import meteordevelopment.meteorclient.MeteorClient;
@@ -13,6 +14,9 @@ import meteordevelopment.meteorclient.addons.MeteorAddon;
 import meteordevelopment.meteorclient.systems.modules.Modules;
 import meteordevelopment.meteorclient.systems.modules.Category;
 
+/**
+ * @author Tas [0xTas] <root@0xTas.dev>
+ **/
 public class MinigamesAddon extends MeteorAddon {
     public static final Logger LOG = LogUtils.getLogger();
     public static final Category CATEGORY = new Category("Minigames", AddonUtil.getCategoryIcon());
@@ -21,6 +25,7 @@ public class MinigamesAddon extends MeteorAddon {
     public void onInitialize() {
         LOG.info("Initializing Meteor Minigames Addon..!");
 
+        Modules.get().add(new Solitaire());
         Modules.get().add(new Meteorites());
         Modules.get().add(new Minesweeper());
 
