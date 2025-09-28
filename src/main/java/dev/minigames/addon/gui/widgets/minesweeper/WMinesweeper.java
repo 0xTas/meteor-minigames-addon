@@ -399,10 +399,12 @@ public class WMinesweeper extends WWidget {
         double localY = mouseY - y;
         int boardLocalX = (int) localX;
         int boardLocalY = (int) (localY - statusHeight);
-        if (boardLocalX != clickedMouseX || boardLocalY != clickedMouseY) return false;
 
+        int bc = boardLocalX / cellSize;
+        int br = boardLocalY / cellSize;
         int c = clickedMouseX / cellSize;
         int r = clickedMouseY / cellSize;
+        if (c != bc || r != br) return false;
         if (r < 0 || c < 0 || r >= rows || c >= cols) return false;
 
         if (button == 0) { // left click
