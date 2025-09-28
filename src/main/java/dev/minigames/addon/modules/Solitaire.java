@@ -7,9 +7,9 @@ import java.nio.file.Files;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import java.nio.file.StandardOpenOption;
-import dev.minigames.addon.MinigamesAddon;
 import org.jetbrains.annotations.Nullable;
-import net.fabricmc.loader.api.FabricLoader;
+import dev.minigames.addon.MinigamesAddon;
+import dev.minigames.addon.util.MinigamesUtil;
 import meteordevelopment.meteorclient.gui.GuiTheme;
 import meteordevelopment.meteorclient.gui.GuiThemes;
 import dev.minigames.addon.gui.screens.SolitaireScreen;
@@ -77,7 +77,7 @@ public class Solitaire extends Module {
 
     public void saveGame(SaveState data) {
         saveData = data;
-        Path saveFolder = FabricLoader.getInstance().getGameDir().resolve(GAME_FOLDER);
+        Path saveFolder = MinigamesUtil.GAME_FOLDER.toPath().resolve(GAME_FOLDER);
 
         //noinspection ResultOfMethodCallIgnored
         saveFolder.toFile().mkdirs();
@@ -103,7 +103,7 @@ public class Solitaire extends Module {
 
     @Override
     public void onActivate() {
-        Path saveFolder = FabricLoader.getInstance().getGameDir().resolve(GAME_FOLDER);
+        Path saveFolder = MinigamesUtil.GAME_FOLDER.toPath().resolve(GAME_FOLDER);
 
         //noinspection ResultOfMethodCallIgnored
         saveFolder.toFile().mkdirs();
