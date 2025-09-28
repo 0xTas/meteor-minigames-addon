@@ -25,7 +25,7 @@ public abstract class WWindowMixin extends WVerticalList {
 
         Cell<? extends WWidget> widget = meteorites.getWidget();
         if (widget != null && widget.widget() instanceof WMeteorites mw) {
-            if (!mw.isPaused && !mw.gameOver && mw.module.mouseAim.get()) {
+            if (!mw.isPaused && !mw.gameOver) {
                 mw.pauseGame();
             }
         }
