@@ -27,6 +27,13 @@
     - Find out which powerups and strategies can take you the farthest!
     - You can see a demo of the game in action [here](https://www.youtube.com/watch?v=xu2lorSXFKg).
     - Tip: if you find the HUD text difficult to read, picking a different font may help. I like Cascadia Code.
+    - **NOTE: RENDERING FOR METEORITES IS CURRENTLY BROKEN ON 1.21.8.**
+- **Solitaire**
+  - A simple Klondike Solitaire implementation with both draw-1 & draw-3 modes.
+  - Configurable color schemes.
+  - Automatic game-state saving.
+  - Support for both mouse & keyboard controls.
+  - Single-move undo button & autocomplete-wins for convenience.
 - More to come..?
 
 ---
